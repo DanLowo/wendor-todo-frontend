@@ -23,11 +23,11 @@ export default function HomePage({ tasks = {} }){
     initialData: tasks
   })
   
-  const handleSuccess = async () => {
+  const handleSuccess = () => {
     setIsLoading(false)
     setIsShowCreateModal(false)
     toast.success("TODO Created")
-    await queryClient.refetchQueries({ queryKey: ["TODOS"] })
+    queryClient.refetchQueries({ queryKey: ["TODOS"] }).then().catch()
   }
   
   const handleCreateTask = async (e) => {
@@ -35,7 +35,8 @@ export default function HomePage({ tasks = {} }){
       e.preventDefault()
       setIsLoading(true)
       const form = new FormData(e.target)
-      await createTaskService({ title: form.get("title"), stage: form.get("stage") }, handleSuccess)
+      await createTaskService({ title: form.get("title"), stage: form.get("stage") })
+      handleSuccess()
     } catch (e) {
       setIsLoading(false)
     }
