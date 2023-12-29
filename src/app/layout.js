@@ -1,6 +1,6 @@
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import {GTFont} from "@/app/font";
+import Script from "next/script";
+import "@/styles/global.scss"
 
 export const metadata = {
   title: 'Wendor - TO-DO APP',
@@ -10,7 +10,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Script src="https://kit.fontawesome.com/8319204ada.js" crossOrigin="anonymous" />
+      <body className={GTFont.className}>{children}</body>
     </html>
   )
 }
