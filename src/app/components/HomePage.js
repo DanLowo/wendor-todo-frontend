@@ -12,7 +12,7 @@ import {createTaskService, getAllTasksService} from "@/services/taskService";
 import {toast} from "react-toastify";
 
 
-export default function HomePage({ tasks = {} }){
+export default function HomePage({}){
   const queryClient = useQueryClient()
   const [isLoading, setIsLoading] = useState(false)
   const [isShowCreateModal, setIsShowCreateModal] = useState(false)
@@ -20,7 +20,6 @@ export default function HomePage({ tasks = {} }){
   const { data: allTasks, isSuccess: isAllTaskSuccess } = useQuery({
     queryKey: ["TODOS"],
     queryFn: getAllTasksService,
-    // initialData: tasks
   })
   
   const handleSuccess = () => {
@@ -89,7 +88,9 @@ const CreateTaskForm = ({ onSubmit, isLoading }) => {
         </select>
       </label>
       
-      <button disabled={isLoading} type="submit" className={utilStyles.button}>Create Task</button>
+      <button style={{...(isLoading && { backgroundColor: "gray" })}} disabled={isLoading} type="submit" className={utilStyles.button}>
+        {isLoading ? <i className={`fa-solid fa-spinner ${utilStyles.button_loading}`}></i> : "Create Task"}
+      </button>
     </form>
   )
 }

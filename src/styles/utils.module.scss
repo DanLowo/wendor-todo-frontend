@@ -41,6 +41,19 @@
   font-size: 1rem;
   cursor: pointer;
   background-color: variable.$wendor-color;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .button_loading {
+    animation: spin 2.5s linear infinite;
+  }
 }
 
 .create_button {

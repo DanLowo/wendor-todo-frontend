@@ -131,7 +131,9 @@ const EditModalForm = ({ onSubmit, taskValues, isLoading }) => {
         </select>
       </label>
       
-      <button disabled={isLoading} type="submit" className={utilStyles.button}>Update Task</button>
+      <button style={{...(isLoading && { backgroundColor: "gray" })}} disabled={isLoading} type="submit" className={utilStyles.button}>
+        {isLoading ? <i className={`fa-solid fa-spinner ${utilStyles.button_loading}`}></i> : "Create Task"}
+      </button>
     </form>
   )
 }
