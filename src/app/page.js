@@ -1,21 +1,19 @@
-import utilStyles from "@/styles/utils.module.scss"
-import cardStyles from "@/styles/cards.module.scss"
-import {GTFont} from "@/app/font";
-import Card from "@/app/components/Card";
+import { ToastContainer } from "react-toastify";
+import HomePage from "@/app/components/HomePage";
+import {Fragment} from "react";
+import ReactQuery from "@/app/ReactQuery";
+import {getAllTasksService} from "@/services/taskService";
 
-export default function Home() {
+
+export default async function Home() {
+  const allTasks = await getAllTasksService()
+  
   return (
-    <main className={utilStyles.container}>
-      <h1 className={utilStyles.title}>Wendor To-Do Application</h1>
-      <div className={utilStyles.flex_end}>
-        <button className={`${utilStyles.create_button} ${GTFont.className}`}>CREATE TODO</button>
-      </div>
-      
-      <div className={cardStyles.card_main_body}>
-        <Card title="PENDING" />
-        <Card title="ON-GOING" />
-        <Card title="COMPLETED" />
-      </div>
-    </main>
+   <Fragment>
+     <ToastContainer autoClose={3000} limit={1} />
+     <ReactQuery>
+       <HomePage tasks={allTasks} />
+     </ReactQuery>
+   </Fragment>
   )
 }
