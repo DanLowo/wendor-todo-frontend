@@ -20,7 +20,7 @@ export default function HomePage({ tasks = {} }){
   const { data: allTasks, isSuccess: isAllTaskSuccess } = useQuery({
     queryKey: ["TODOS"],
     queryFn: getAllTasksService,
-    initialData: tasks
+    // initialData: tasks
   })
   
   const handleSuccess = () => {
