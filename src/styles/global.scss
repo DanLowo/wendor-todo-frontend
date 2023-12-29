@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+input, select {
+  margin: .6rem 0 1.5rem 0;
+  outline: none;
+  border-radius: .6rem;
+  max-width: 100%;
+  font-family: Medium, serif;
+  border: 1px solid rgba(124,124,122,0.57);
+  padding: .8rem .8rem .8rem 1rem;
+  background-color: transparent;
+}
+
+input::placeholder, textarea::placeholder {
+  opacity: .4;
+  color: #4B506D;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  color: #9FA2B4;
+  font-size: .9rem;
+}

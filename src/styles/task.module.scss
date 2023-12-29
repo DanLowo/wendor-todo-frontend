@@ -1,0 +1,31 @@
+.task_card {
+  padding: .95rem;
+  margin-bottom: 1rem;
+  border-radius: .3rem;
+  background: lightgray;
+  width: calc(100% - 1.9rem);
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+
+    div{
+      display: flex;
+      gap: 1rem;
+
+      i {
+        cursor: pointer;
+      }
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin-bottom: .7rem;
+      font-weight: normal;
+    }
+  }
+
+  p {
+    font-size: .8rem;
+  }
+}
