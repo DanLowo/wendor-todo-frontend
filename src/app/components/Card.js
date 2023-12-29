@@ -17,6 +17,10 @@ export default function Card ({ title, tasks = [] }){
   const [isShowEditModal, setIsShowEditModal] = useState(false)
   const [editTaskValues, setEditTaskValues] = useState({})
   
+  useEffect(() => {
+    setSearchableTasks(tasks)
+  }, [tasks])
+  
   const handleSuccess = (message) => {
     setIsLoading(false)
     setIsShowEditModal(false)
@@ -91,6 +95,10 @@ export default function Card ({ title, tasks = [] }){
               onDelete={handleDeleteTask}
             />
           ))}
+  
+          {searchableTasks.length === 0 && (
+            <h3 className={cardStyles.no_task_found}>No tasks found</h3>
+          )}
         </div>
       </div>
     </Fragment>
