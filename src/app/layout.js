@@ -1,6 +1,8 @@
 import {GTFont} from "@/app/font";
 import Script from "next/script";
 import "@/styles/global.scss"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const metadata = {
   title: 'Wendor - TO-DO APP',
