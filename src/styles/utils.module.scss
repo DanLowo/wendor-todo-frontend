@@ -5,6 +5,10 @@
   max-width: 100vw;
   min-height: 100vh;
   min-width: calc(100vw - 10rem);
+
+  @media screen and (max-width: 500px) {
+    padding: .7rem 1rem !important;
+  }
 }
 
 .flex_space {
@@ -15,6 +19,10 @@
 .title {
   padding: 2rem;
   text-align: center;
+
+  @media screen and (max-width: 500px) {
+    padding: 2rem 0 !important;
+  }
 }
 
 .flex_end {
@@ -22,6 +30,17 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: .8rem 1.2rem;
+  border-radius: .6rem;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: variable.$wendor-color;
 }
 
 .create_button {
@@ -33,4 +52,8 @@
   font-size: 1rem;
   cursor: pointer;
   background-color: variable.$wendor-color;
+
+  @media screen and (max-width: 500px) {
+    width: 100% !important;
+  }
 }
