@@ -1,0 +1,36 @@
+@use "./variable";
+
+.container {
+  padding: .7rem 5rem;
+  max-width: 100vw;
+  min-height: 100vh;
+  min-width: calc(100vw - 10rem);
+}
+
+.flex_space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  padding: 2rem;
+  text-align: center;
+}
+
+.flex_end {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.create_button {
+  border: none;
+  color: white;
+  padding: .8rem 1.2rem;
+  border-radius: .6rem;
+  width: 10%;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: variable.$wendor-color;
+}
