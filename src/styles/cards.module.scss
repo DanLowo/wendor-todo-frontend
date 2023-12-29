@@ -1,0 +1,40 @@
+.card_main_body {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.card_container {
+  min-height: 500px;
+  border-radius: .6rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #bbb7b7;
+  width: calc(100% / 3 - 3rem);
+  max-width: 400px;
+
+  h2 {
+    padding: .9rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border-top-left-radius: .6rem;
+    border-top-right-radius: .6rem;
+  }
+
+  .card_task_container {
+    padding: .1rem .6rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100% !important;
+  }
+}
+
+.card_search_form {
+  width: 100%;
+
+  > input {
+    width: calc(100% - 2rem);
+  }
+}
