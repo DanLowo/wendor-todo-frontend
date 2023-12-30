@@ -1,9 +1,8 @@
-import axios from "axios";
+import api from "@/config/api";
 
 export const getAllTasksService = async () => {
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/todos`)
-    return data
+    return await api.get("/todos")
   } catch (e) {
     throw e.response
   }
@@ -11,8 +10,7 @@ export const getAllTasksService = async () => {
 
 export const createTaskService = async (body) => {
   try {
-    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/todos`, body)
-    return data
+    return await api.post("/todos", body)
   } catch (e) {
     throw e.response
   }
@@ -20,8 +18,7 @@ export const createTaskService = async (body) => {
 
 export const updateTaskService = async (id, body) => {
   try {
-    const { data } = await axios.patch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/todos/${id}`, body)
-    return data
+    return await api.patch(`/todos/${id}`, body)
   } catch (e) {
     throw e.response
   }
@@ -30,8 +27,7 @@ export const updateTaskService = async (id, body) => {
 
 export const deleteTaskService = async (id) => {
   try {
-    const { data } = await axios.delete(`${process.env.NEXT_PUBLIC_API_BASE_URL}/todos/${id}`)
-    return data
+    return await api.delete(`/todos/${id}`)
   } catch (e) {
     throw e.response
   }
