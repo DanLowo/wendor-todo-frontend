@@ -1,5 +1,5 @@
 const get = async (url) => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}${url}`)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}${url}`, { cache: "no-store" })
   return await response.json()
 }
 
